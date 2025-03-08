@@ -141,7 +141,12 @@ let circles = generateCircles(5);  // Genera 10 círculos inicialmente
 function updateCircles() {
     requestAnimationFrame(updateCircles);  // Llama a la función nuevamente para crear una animación continua
 
-    ctx.fillStyle = "rgba(186, 224, 194, 0.21)";  // Color de fondo del lienzo
+    let gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+gradient.addColorStop(0, "rgb(34, 4, 4)");  // Color inicial (negro con más opacidad)
+gradient.addColorStop(1, "rgba(5, 6, 36, 0.88)");  // Color final (negro con menos opacidad)
+
+ctx.fillStyle = gradient;
+
     ctx.fillRect(0, 0, canvas.width, canvas.height);  // Redibuja el fondo
 
     // Actualiza y dibuja cada círculo
