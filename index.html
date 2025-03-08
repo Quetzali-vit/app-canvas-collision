@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Metaetiquetas para establecer la codificación y hacer la página responsiva -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título de la página que aparece en la pestaña del navegador -->
+    <title>Detección de colisiones</title>
+
+    <style> /* Estilos para el cuerpo de la página */
+        body {
+            font-family: Arial, sans-serif; /* Fuente sans-serif para todo el contenido */
+            text-align: center; /* Centra el texto */
+            margin: 0; /* Elimina los márgenes por defecto */
+            padding: 0; /* Elimina el padding por defecto */
+            display: flex; /* Usa Flexbox para alinear los elementos */
+            justify-content: center; /* Centra el contenido horizontalmente */
+            align-items: center; /* Centra el contenido verticalmente */
+            height: 100vh;
+            /* Establece la altura de la vista al 100% de la pantalla */
+            background: linear-gradient(to right, #80ff89, #8d6aff);
+            /* Degradado de fondo que va de verde a morado */
+        }
+
+        /* Estilos para el contenedor de controles */
+        #controls {
+            position: absolute;
+            /* Posiciona el contenedor de controles de manera absoluta */
+            top: 10px; /* 10px desde la parte superior */
+            left: 50%; /* Centrado horizontalmente */
+            transform: translateX(-50%); /* Ajusta el desplazamiento para centrarlo */
+            font-size: 18px; /* Tamaño de fuente de los controles */
+            background-color: rgba(255, 255, 255, 0.388); /* Fondo blanco con opacidad */
+            padding: 10px; /* Espaciado interno */
+            border-radius: 10px; /* Bordes redondeados */
+            z-index: 1; /* Asegura que el contenedor esté sobre otros elementos */
+        }
+
+        /* Estilos para el canvas donde se dibujará la animación */
+        canvas {
+            position: absolute; /* Posiciona el canvas de manera absoluta */
+            top: 50%; /* Centra el canvas verticalmente */
+            left: 50%; /* Centra el canvas horizontalmente */
+            transform: translate(-50%, -50%); /* Ajusta el desplazamiento para que esté centrado */
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor de controles con un input para el número de círculos -->
+    <div id="controls">
+        <label for="circleCount">Número de círculos:</label>
+        <!-- Input numérico para ingresar el número de círculos -->
+        <input type="number" id="circleCount" value="5" min="2" max="20" />
+        <!-- Botón para actualizar el número de círculos en la animación -->
+        <button onclick="updateCircleCount()">Actualizar</button>
+    </div>
+
+    <!-- Elemento canvas para dibujar la animación -->
+    <canvas id="canvas"></canvas>
+
+    <!-- Archivo JavaScript que contiene la lógica de la animación -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
